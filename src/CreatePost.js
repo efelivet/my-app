@@ -34,8 +34,10 @@ return(
 onChange ={(e)=>{setDescription(e.target.value)}}/>
 <br/><br/>
 <input type ="file" className ="file" onChange ={(e)=>{setFile(e.target.files[0])}}/>
-<br/>
-<button>Post</button>
+<br/><br/>
+<div className="row">  
+      <input type="submit" value="Post"/>
+    </div>
      </form>
      </div>
 )

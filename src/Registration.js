@@ -21,33 +21,60 @@ export default function Registration(ev) {
       alert("registration successful")
     }
     else{
-      alert("registration failed");
+      alert("try again");
     }
    
   }
   return (
-   <div className ="register">
+    <>
+   <div className="container">
+   <h1>Register</h1>
     <form  onSubmit={register} >
-       
-      <h1>Register</h1><br/>
-      <input type="text" className ="text"
-             placeholder="username"
+         <div className="row">
+        <div className="col-25">
+        <label for="fname">username</label>
+      </div>
+      <div className="col-75">
+      <input type="text" 
+             placeholder="Your username.."
              value={username}
+             id="fname" name="username" 
              onChange={ev => setUsername(ev.target.value)}/>
-              <br/>
+             
            {error && username.length<=0?
-           <label ><p className ="label">Fill in all fields</p></label>:""}   
-              <br/>
-      <input type="password" className ="text"
-             placeholder="password"
+           <label ><p className ="label">username is required</p></label>:""}   
+            
+              </div>
+      </div> 
+
+      <div className="row">
+
+      <div className="col-25">
+        <label for="lname">password</label>
+      </div>
+
+
+      <div className="col-75">
+       
+      <input type="password"
+             placeholder="Your last password.."
              value={password}
+             id="lname" name="lastname"
              onChange={ev => setPassword(ev.target.value)}/>
-             <br/>
+            
              {error && password.length<=0?
-           <label ><p className ="label" >Fill in all fields</p></label>:""}  
-              <br/>
-      <button>Register</button>
+           <label ><p className ="label" >password is required</p></label>:""}  
+              
+         </div>
+      
+       </div>
+             <br/>
+   <div className="row">
+      <input type="submit" value="Submit"/>
+    </div>
+
     </form>
     </div>
+</>
   );
 }

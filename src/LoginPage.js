@@ -30,7 +30,7 @@ export default function LoginPage() {
        
       }
      else {
-      alert('wrong credentials');
+      alert('invalid username and password');
     }
   }
 
@@ -38,30 +38,51 @@ export default function LoginPage() {
     return <Navigate to={'/'} />
   }
   return (
-    <div className ="register">
-       
+    <div className="container">
+       <h1>Login</h1>
     <form  onSubmit={login} >
-      <h1>Login</h1> <br/>
-      <input type="text" className ="text"
-             placeholder="username"
+    <div className="row">
+        <div className="col-25">
+        <label for="fname">username</label>
+      </div>
+      <div className="col-75">
+      <input type="text" 
+             placeholder="Your username.."
              value={username}
+             id="fname" name="username" 
              onChange={ev => setUsername(ev.target.value)}/>
-               <br/>
-              
+             
            {error && username.length<=0?
-           <label>Fill in all fields</label>:""}   
-              <br/>
-         
-      <input type="password" className ="text"
-             placeholder="password"
+           <label ><p className ="label">username is required</p></label>:""}   
+             
+              </div>
+      </div> 
+
+      <div className="row">
+
+      <div className="col-25">
+        <label for="lname">password</label>
+      </div>
+
+
+      <div className="col-75">
+      <input type="password"
+             placeholder="Your last password.."
              value={password}
+             id="lname" name="lastname"
              onChange={ev => setPassword(ev.target.value)}/>
+            
+             {error && password.length<=0?
+           <label ><p className ="label" >password is required</p></label>:""}  
+             
+         </div>
+      
+       </div>
                <br/>
-               {error && password.length<=0?
-           <label>Fill in all fields</label>:""}  
-              <br/>
-              
-      <button>Login</button>
+   <div className="row">
+      <input type="submit" value="Submit"/>
+    </div>
+
     </form>
     </div>
   );

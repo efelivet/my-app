@@ -35,7 +35,7 @@ return (
    <header >
 
 
-    <Link to ="/">Home</Link>
+    <Link to ="/" className ="Hom">Home</Link>
 <nav>
    
   
@@ -43,9 +43,9 @@ return (
          
       <div className ="float">
        
-          <Link to ="/create" className ="create" >CreatePost</Link>
+          <Link to ="/create" className ="create" >Create Post</Link>
           
-       <input type="button" onClick={handleLogout} 
+       <input type="button" className ="out" onClick={handleLogout} 
        value="Logout" />
   
     </div>
@@ -53,8 +53,8 @@ return (
        )}  
       {!username && (
       <>
-            <Link to ="/registration" className="Regist">Register</Link>
-             <Link to ="/login" className ="logi" >Login</Link> 
+            <Link to ="/registration" className="xw">Register</Link>
+             <Link to ="/login" className ="xw" >Login</Link> 
          </>)}
            
     </nav>
